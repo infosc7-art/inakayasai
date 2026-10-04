@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Aki（ファウンダー）のイラスト">
+  <defs>
+    <clipPath id="c"><circle cx="200" cy="200" r="196"/></clipPath>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fc6e8"/><stop offset="1" stop-color="#e9f4ea"/></linearGradient>
+    <radialGradient id="iris" cx=".5" cy=".35" r=".7"><stop offset="0" stop-color="#7a5236"/><stop offset="1" stop-color="#2b1a12"/></radialGradient>
+  </defs>
+  <g clip-path="url(#c)">
+    <rect width="400" height="400" fill="url(#sky)"/>
+    <!-- 猫岳と土手 -->
+    <path d="M250 250 C268 196 292 176 314 176 C338 176 360 200 380 250 Z" fill="#4f7a45"/>
+    <path d="M-10 262 C80 244 300 240 410 256 L410 410 L-10 410 Z" fill="#b9c98a"/>
+    <!-- 芋の葉 -->
+    <g fill="#4e8a43">
+      <path d="M10 330 q22 -34 44 0 q-22 18 -44 0z"/><path d="M48 300 q22 -34 44 0 q-22 18 -44 0z"/>
+      <path d="M300 300 q22 -34 44 0 q-22 18 -44 0z"/><path d="M340 330 q22 -34 44 0 q-22 18 -44 0z"/>
+    </g>
+    <g fill="#8a3b4f"><path d="M26 290 q16 -26 32 0 q-16 14 -32 0z"/><path d="M350 290 q16 -26 32 0 q-16 14 -32 0z"/></g>
+    <!-- 上着 -->
+    <path d="M66 420 C76 324 128 292 200 290 C272 292 324 324 334 420 Z" fill="#6f675a" stroke="#3a2a22" stroke-width="3"/>
+    <path d="M200 296 L166 300 L184 346 L200 322 L216 346 L234 300 Z" fill="#2f3a44" stroke="#3a2a22" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M200 324 L200 420" stroke="#4d473e" stroke-width="4"/>
+    <path d="M118 360 L118 420 M282 360 L282 420" stroke="#5b544a" stroke-width="3"/>
+    <!-- 首 -->
+    <path d="M180 248 L180 298 Q200 310 220 298 L220 248 Z" fill="#d9a27c"/>
+    <path d="M180 270 Q200 282 220 270" stroke="#c48a64" stroke-width="3" fill="none"/>
+    <!-- 耳 -->
+    <ellipse cx="139" cy="190" rx="12" ry="18" fill="#e8b48d" stroke="#3a2a22" stroke-width="3"/>
+    <ellipse cx="261" cy="190" rx="12" ry="18" fill="#e8b48d" stroke="#3a2a22" stroke-width="3"/>
+    <!-- 顔 -->
+    <path d="M142 168 C142 118 168 100 200 100 C232 100 258 118 258 168 C258 214 240 250 200 264 C160 250 142 214 142 168 Z" fill="#f0c19c" stroke="#3a2a22" stroke-width="3"/>
+    <!-- 髪（短め・つんつん） -->
+    <path d="M134 182 C124 118 158 78 202 78 C248 78 280 114 268 184 L260 154 L252 168 L246 138 L230 150 L224 122 L208 140 L198 116 L186 140 L172 122 L166 150 L152 138 L146 168 L140 154 Z" fill="#1d1a1c" stroke="#1d1a1c" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M176 92 Q196 84 214 92" stroke="#4a4550" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- 眉 -->
+    <path d="M154 166 Q168 156 186 162" stroke="#1d1a1c" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M214 162 Q232 156 246 166" stroke="#1d1a1c" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <!-- 目 -->
+    <ellipse cx="172" cy="192" rx="12" ry="13" fill="#fff"/>
+    <ellipse cx="228" cy="192" rx="12" ry="13" fill="#fff"/>
+    <ellipse cx="173" cy="194" rx="9" ry="11" fill="url(#iris)"/>
+    <ellipse cx="227" cy="194" rx="9" ry="11" fill="url(#iris)"/>
+    <circle cx="173" cy="195" r="4.5" fill="#140c08"/><circle cx="227" cy="195" r="4.5" fill="#140c08"/>
+    <circle cx="177" cy="189" r="3.4" fill="#fff"/><circle cx="231" cy="189" r="3.4" fill="#fff"/>
+    <circle cx="169" cy="199" r="1.6" fill="#fff"/><circle cx="223" cy="199" r="1.6" fill="#fff"/>
+    <path d="M157 186 Q170 174 188 182" stroke="#1d1a1c" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M212 182 Q230 174 243 186" stroke="#1d1a1c" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <!-- 頬・鼻・口 -->
+    <ellipse cx="156" cy="216" rx="12" ry="7" fill="#e88a7a" opacity=".4"/>
+    <ellipse cx="244" cy="216" rx="12" ry="7" fill="#e88a7a" opacity=".4"/>
+    <path d="M201 204 Q197 214 203 216" stroke="#c48a64" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M176 228 Q200 254 224 228 Z" fill="#8a3434" stroke="#3a2a22" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M180 230 Q200 238 220 230 L218 235 Q200 242 182 235 Z" fill="#fff"/>
+  </g>
+  <circle cx="200" cy="200" r="196" fill="none" stroke="#c98a3b" stroke-width="8"/>
+</svg>

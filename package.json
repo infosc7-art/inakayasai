@@ -1,0 +1,11 @@
+{
+  "name": "inakayasai-site",
+  "private": true,
+  "type": "module",
+  "description": "田舎野菜（Inakayasai）公式サイト（静的生成＋microCMS）",
+  "scripts": {
+    "build": "node build.mjs",
+    "preview": "node build.mjs --preview"
+  },
+  "engines": { "node": ">=18" }
+}

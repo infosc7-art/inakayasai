@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="祖母のイラスト">
+  <defs>
+    <clipPath id="c"><circle cx="200" cy="200" r="196"/></clipPath>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2e6cf"/><stop offset="1" stop-color="#e2d3b4"/></linearGradient>
+    <pattern id="flower" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="#5f93cf"/>
+      <circle cx="10" cy="10" r="5" fill="#c79ad8"/><circle cx="10" cy="10" r="2" fill="#f6e2a0"/>
+      <circle cx="30" cy="28" r="5" fill="#e79ab5"/><circle cx="30" cy="28" r="2" fill="#f6e2a0"/>
+      <circle cx="28" cy="6" r="2.5" fill="#9bd0a6"/><circle cx="8" cy="32" r="2.5" fill="#9bd0a6"/>
+    </pattern>
+  </defs>
+  <g clip-path="url(#c)">
+    <rect width="400" height="400" fill="url(#bg)"/>
+    <g fill="#c9b48c" opacity=".7">
+      <path d="M40 120 q20 -30 40 0 q-20 16 -40 0z"/><path d="M320 100 q20 -30 40 0 q-20 16 -40 0z"/><path d="M330 180 q16 -24 32 0 q-16 12 -32 0z"/>
+    </g>
+    <!-- 花柄の上着 -->
+    <path d="M58 420 C68 326 124 292 200 290 C276 292 332 326 342 420 Z" fill="url(#flower)" stroke="#3a2a22" stroke-width="3"/>
+    <path d="M150 300 Q200 336 250 300 Q236 296 200 300 Q164 296 150 300 Z" fill="#4a7cb6" stroke="#3a2a22" stroke-width="3"/>
+    <!-- 首 -->
+    <path d="M182 252 L182 298 Q200 306 218 298 L218 252 Z" fill="#d79c78"/>
+    <!-- 顔 -->
+    <path d="M144 172 C144 124 170 106 200 106 C230 106 256 124 256 172 C256 220 236 254 200 262 C164 254 144 220 144 172 Z" fill="#e6b08c" stroke="#3a2a22" stroke-width="3"/>
+    <!-- 白髪（横） -->
+    <path d="M144 168 C140 186 142 204 148 214 L152 176 Z M256 168 C260 186 258 204 252 214 L248 176 Z" fill="#cfccc6" stroke="#9a968c" stroke-width="2"/>
+    <!-- 手ぬぐい（姉さんかぶり） -->
+    <path d="M132 176 C122 112 160 80 200 80 C242 80 280 112 268 176 C262 150 250 136 232 132 C214 128 186 128 168 132 C150 136 138 150 132 176 Z" fill="#fbfaf6" stroke="#3a2a22" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M150 134 Q200 120 250 134" stroke="#d9d4c8" stroke-width="3" fill="none"/>
+    <path d="M262 150 L292 136 L284 160 Z" fill="#fbfaf6" stroke="#3a2a22" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M160 108 L240 108" stroke="#9cc0dc" stroke-width="4" stroke-dasharray="10 8"/>
+    <!-- 眉・目（やさしい笑顔） -->
+    <path d="M160 168 Q172 162 184 166" stroke="#8c8278" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M216 166 Q228 162 240 168" stroke="#8c8278" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M158 190 Q171 178 186 190" stroke="#2a1d18" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M214 190 Q229 178 242 190" stroke="#2a1d18" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M152 194 l-6 3 M248 194 l6 3" stroke="#b07a58" stroke-width="2" stroke-linecap="round"/>
+    <!-- 頬・鼻・口 -->
+    <ellipse cx="158" cy="214" rx="13" ry="8" fill="#ec8a84" opacity=".45"/>
+    <ellipse cx="242" cy="214" rx="13" ry="8" fill="#ec8a84" opacity=".45"/>
+    <path d="M200 200 Q195 212 203 214" stroke="#b07a58" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M174 222 Q170 232 176 240 M226 222 Q230 232 224 240" stroke="#c08a68" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M184 232 Q200 248 216 232" stroke="#a0444a" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <!-- 束ねた青菜（高菜） -->
+    <g stroke="#3a2a22" stroke-width="3" stroke-linejoin="round">
+      <path d="M110 420 C104 370 130 340 160 336 C176 334 186 346 182 362 C178 384 160 404 150 420 Z" fill="#6aa34f"/>
+      <path d="M150 420 C150 372 178 344 206 344 C222 344 230 360 224 376 C216 398 196 412 190 420 Z" fill="#82b85e"/>
+      <path d="M200 420 C206 380 236 352 262 356 C278 358 284 374 276 388 C266 404 244 414 236 420 Z" fill="#5f9645"/>
+    </g>
+    <path d="M140 360 L150 420 M190 366 L180 420 M246 372 L226 420" stroke="#d6e8b8" stroke-width="3" fill="none"/>
+    <path d="M150 392 C164 380 176 382 186 392 L176 408 L156 408 Z" fill="#e6b08c" stroke="#3a2a22" stroke-width="3"/>
+  </g>
+  <circle cx="200" cy="200" r="196" fill="none" stroke="#a88660" stroke-width="8"/>
+</svg>

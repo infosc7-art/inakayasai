@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Yoko（パートナー）のイラスト">
+  <defs>
+    <clipPath id="c"><circle cx="200" cy="200" r="196"/></clipPath>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9d6e6"/><stop offset=".7" stop-color="#f4e3d7"/><stop offset="1" stop-color="#f6efe2"/></linearGradient>
+    <radialGradient id="iris" cx=".5" cy=".35" r=".7"><stop offset="0" stop-color="#8a5a3a"/><stop offset="1" stop-color="#2a1610"/></radialGradient>
+  </defs>
+  <g clip-path="url(#c)">
+    <rect width="400" height="400" fill="url(#sky)"/>
+    <path d="M-10 270 C90 254 300 252 410 266 L410 410 L-10 410 Z" fill="#a98a66"/>
+    <path d="M-10 300 L410 286" stroke="#8d7050" stroke-width="5"/>
+    <path d="M-10 336 L410 318" stroke="#8d7050" stroke-width="5"/>
+    <!-- 後ろ髪（まとめ髪） -->
+    <path d="M128 182 C118 112 156 76 202 76 C250 76 286 114 274 184 C270 230 252 250 236 258 L164 258 C148 250 132 230 128 182 Z" fill="#2a1b16"/>
+    <!-- パーカー -->
+    <path d="M60 420 C70 326 124 290 200 288 C276 290 330 326 340 420 Z" fill="#6c7650" stroke="#3a2a22" stroke-width="3"/>
+    <path d="M126 304 C150 278 250 278 274 304 C258 320 236 312 200 312 C164 312 142 320 126 304 Z" fill="#59623f" stroke="#3a2a22" stroke-width="3"/>
+    <path d="M200 312 L200 420" stroke="#3f462c" stroke-width="4"/>
+    <path d="M196 316 L196 420 M204 316 L204 420" stroke="#9aa078" stroke-width="1.5" stroke-dasharray="4 4"/>
+    <path d="M118 350 Q112 390 120 420 M282 350 Q288 390 280 420" stroke="#56603d" stroke-width="3" fill="none"/>
+    <!-- 首 -->
+    <path d="M184 250 L184 298 Q200 306 216 298 L216 250 Z" fill="#f0c7a5"/>
+    <!-- 耳 -->
+    <ellipse cx="141" cy="192" rx="10" ry="15" fill="#f7d3b4" stroke="#3a2a22" stroke-width="3"/>
+    <ellipse cx="259" cy="192" rx="10" ry="15" fill="#f7d3b4" stroke="#3a2a22" stroke-width="3"/>
+    <!-- 顔 -->
+    <path d="M144 170 C144 122 170 104 200 104 C230 104 256 122 256 170 C256 214 238 248 200 262 C162 248 144 214 144 170 Z" fill="#fbdcc0" stroke="#3a2a22" stroke-width="3"/>
+    <!-- 前髪（横に流す） -->
+    <path d="M136 178 C130 120 162 88 204 88 C246 88 274 120 266 178 C258 146 244 128 222 118 C226 136 212 150 186 156 C198 144 200 128 194 118 C170 128 150 150 136 178 Z" fill="#2a1b16" stroke="#2a1b16" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M168 104 Q200 92 232 104" stroke="#5a4038" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- 眉 -->
+    <path d="M158 168 Q170 162 184 166" stroke="#2a1b16" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M216 166 Q230 162 242 168" stroke="#2a1b16" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- 目（笑顔） -->
+    <ellipse cx="172" cy="194" rx="12" ry="13" fill="#fff"/>
+    <ellipse cx="228" cy="194" rx="12" ry="13" fill="#fff"/>
+    <ellipse cx="173" cy="196" rx="9.5" ry="11.5" fill="url(#iris)"/>
+    <ellipse cx="227" cy="196" rx="9.5" ry="11.5" fill="url(#iris)"/>
+    <circle cx="173" cy="197" r="4.5" fill="#140c08"/><circle cx="227" cy="197" r="4.5" fill="#140c08"/>
+    <circle cx="177" cy="191" r="3.6" fill="#fff"/><circle cx="231" cy="191" r="3.6" fill="#fff"/>
+    <circle cx="169" cy="201" r="1.8" fill="#fff"/><circle cx="223" cy="201" r="1.8" fill="#fff"/>
+    <path d="M156 188 Q170 174 189 184" stroke="#2a1b16" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+    <path d="M211 184 Q230 174 244 188" stroke="#2a1b16" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+    <path d="M156 188 l-6 -4 M244 188 l6 -4" stroke="#2a1b16" stroke-width="3" stroke-linecap="round"/>
+    <!-- 頬・鼻・口 -->
+    <ellipse cx="156" cy="218" rx="13" ry="7" fill="#f08c8c" opacity=".45"/>
+    <ellipse cx="244" cy="218" rx="13" ry="7" fill="#f08c8c" opacity=".45"/>
+    <path d="M201 208 Q198 216 203 217" stroke="#d9a07e" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M180 230 Q200 252 220 230 Z" fill="#a83e48" stroke="#3a2a22" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M184 232 Q200 238 216 232 L214 236 Q200 241 186 236 Z" fill="#fff"/>
+    <!-- 収穫したサツマイモと軍手 -->
+    <g stroke="#3a2a22" stroke-width="3" stroke-linejoin="round">
+      <path d="M150 372 C150 346 182 336 196 352 C206 366 190 392 168 392 C156 392 150 384 150 372 Z" fill="#9c4058"/>
+      <path d="M196 380 C192 352 226 340 244 354 C258 368 244 396 218 396 C204 396 198 390 196 380 Z" fill="#b24e64"/>
+      <path d="M232 366 C238 342 270 340 278 360 C284 378 266 396 248 392 C236 388 230 378 232 366 Z" fill="#8f3a50"/>
+      <path d="M120 390 C116 368 134 356 152 362 L160 400 L124 410 Z" fill="#f4f1e8"/>
+      <path d="M280 390 C284 368 266 356 248 362 L240 400 L276 410 Z" fill="#f4f1e8"/>
+    </g>
+    <path d="M176 352 q-6 -14 -18 -18 M228 350 q2 -14 12 -22" stroke="#7a5a3a" stroke-width="2" fill="none"/>
+  </g>
+  <circle cx="200" cy="200" r="196" fill="none" stroke="#c98a3b" stroke-width="8"/>
+</svg>
