@@ -1,5 +1,5 @@
 import { products, photos } from '../config.mjs';
-import { esc, icon, photo, pic, pageHero, productTable, growTags, ctaBand, faqBlock, schemaFaq, schemaProducts, figure, yt, contactButtons } from '../layout.mjs';
+import { esc, icon, photo, pic, pageHero, productTable, growTags, ctaBand, faqBlock, schemaFaq, schemaProducts, figure, yt, contactButtons, pickCards } from '../layout.mjs';
 
 const cr = (name, path) => [['ホーム', '/'], [name, path]];
 const of = (cat) => products.filter((p) => p.cat === cat);
@@ -99,25 +99,30 @@ ${ctaBand(c, { title: '寝かせたサツマイモを、ご家庭で。', text: 
 // ------------------------------------------------------------ ジャガイモ
 const jagaimo = {
   path: '/jagaimo/',
-  title: '鹿児島県産ジャガイモ通販｜男爵・メークイン・ノーザンルビー・アンデスレッド｜田舎野菜',
-  description: '鹿児島県薩摩川内市の農家が育てるジャガイモ。男爵、メークイン、ノーザンルビー、アンデスレッドなど。農薬・除草剤・化学肥料は栽培期間中不使用。収穫期にご案内します。',
+  title: '鹿児島県産ジャガイモ通販｜メークイン・ノーザンルビー・アンデスレッド・男爵｜田舎野菜',
+  description: '鹿児島県薩摩川内市の農家が育てるジャガイモ。メークイン、ノーザンルビー、アンデスレッド、男爵、デジマ、ニシユタカ。農薬・除草剤・化学肥料は栽培期間中不使用。品種おまかせの詰め合わせもあります。',
   crumbs: cr('ジャガイモ', '/jagaimo/'),
-  schema: () => [...schemaProducts(of('jagaimo'), photos.vegSet)],
-  body: (c) => `${pageHero(c, { eyebrow: 'Potato', h1: '鹿児島のジャガイモ', lead: '男爵、メークイン、ノーザンルビー、アンデスレッド。肥料は草木灰・鶏糞・堆肥・腐葉土で、化学肥料は使っていません。', crumbs: cr('ジャガイモ', '/jagaimo/') })}
+  schema: () => [...schemaProducts(of('jagaimo'), photos.jagaMix)],
+  body: (c) => `${pageHero(c, { eyebrow: 'Potato', h1: '鹿児島のジャガイモ<small>赤、ピンク、黄金色</small>', lead: 'メークイン、ノーザンルビー、アンデスレッド、男爵、デジマ、ニシユタカ。肥料は草木灰・鶏糞・堆肥・腐葉土で、化学肥料は使っていません。', crumbs: cr('ジャガイモ', '/jagaimo/'), image: 'jagaMix2' })}
 <section class="sec"><div class="wrap">
   <div class="grow-box">${growTags('jaga')}</div>
-  <header class="sec__head"><h2>商品と価格</h2><p>ジャガイモは、収穫期になったらご案内します。予約をご希望の方は、お気軽にご連絡ください。</p></header>
+  ${pickCards(c, of('jagaimo').filter((p) => p.pick))}
+  <header class="sec__head mt"><h2>商品と価格</h2><p>ジャガイモは、収穫期になったらご案内します。予約をご希望の方は、お気軽にご連絡ください。</p></header>
   ${productTable(of('jagaimo'))}
   ${shipNote(false)}
   <div class="center mt">${contactButtons(c)}</div>
 </div></section>
 <section class="sec sec--tint"><div class="wrap">
-  <header class="sec__head"><h2>品種のちがい</h2></header>
-  <div class="variety variety--4">
-    <article class="variety__item">${pic('potato')}<h3>男爵</h3><p class="variety__tag">粉質・ほくほく</p><p>昔から愛される定番。ポテトサラダ、コロッケ、蒸して塩だけでも。</p></article>
-    <article class="variety__item">${pic('potato')}<h3>メークイン</h3><p class="variety__tag">なめらか・煮くずれしにくい</p><p>肉じゃがやカレーなど、煮込み料理に。</p></article>
-    <article class="variety__item">${pic('potato')}<h3>ノーザンルビー</h3><p class="variety__tag">赤い皮・ピンクの中身</p><p>ほんのり甘く、サラダやスープの彩りに。</p></article>
-    <article class="variety__item">${pic('potato')}<h3>アンデスレッド</h3><p class="variety__tag">赤い皮・ほくほく</p><p>男爵に近い食感で、塩バターやグリルに。</p></article>
+  <header class="sec__head"><p class="eyebrow">Varieties</p><h2>品種のちがい</h2></header>
+  <div class="variety">
+    <article class="variety__item">${figure(c, 'mayQueen', '畝に並ぶメークイン')}<h3>メークイン</h3><p class="variety__tag">なめらか・煮くずれしにくい</p><p class="variety__copy">煮くずれ知らず、<br>旨味たっぷり。</p><p>しっとりなめらか。肉じゃがやカレーで、形を残したまま味がしみます。</p></article>
+    <article class="variety__item">${figure(c, 'northernRuby', '掘りたてのノーザンルビー')}<h3>ノーザンルビー</h3><p class="variety__tag">赤い皮・ピンクの中身</p><p class="variety__copy">薩摩の大地に咲いた、<br>天然のピンクポテト。</p><p>果実のような色と、ほのかな甘み。ポテトサラダやスープが華やぎます。</p></article>
+    <article class="variety__item">${figure(c, 'andesRed', '掘りたてのアンデスレッド')}<h3>アンデスレッド</h3><p class="variety__tag">赤い皮・ほくほく</p><p class="variety__copy">赤い皮に秘めた、<br>ほくほくのごちそう。</p><p>男爵に近いほくほく感に、ナッツのような風味。塩バターやグリルで。</p></article>
+  </div>
+  <div class="variety variety--text mt">
+    <article class="variety__item"><h3>男爵</h3><p class="variety__tag">粉質・ほくほく</p><p class="variety__copy">王道にして至高。<br>“薩摩の男爵”のほくほく。</p><p>百年愛される定番品種。ポテトサラダ、コロッケ、蒸して塩だけでも。</p></article>
+    <article class="variety__item"><h3>デジマ</h3><p class="variety__tag">しっとり・煮くずれしにくい</p><p>九州で古くから育てられてきた品種。煮物やカレー、炒め物に向いています。</p></article>
+    <article class="variety__item"><h3>ニシユタカ</h3><p class="variety__tag">しっとり・やわらか</p><p>暖かい地域向けに生まれた品種。煮物、肉じゃが、フライドポテトに。</p></article>
   </div>
 </div></section>
 ${ctaBand(c, { title: '収穫期のご案内を受け取る', text: 'ジャガイモの予約やご質問は、ご注文フォーム、メール、InstagramのDMからどうぞ。' })}`,
@@ -127,18 +132,23 @@ ${ctaBand(c, { title: '収穫期のご案内を受け取る', text: 'ジャガ�
 const spice = {
   path: '/ninniku-tougarashi/',
   title: '鹿児島県産にんにく・唐辛子（鷹の爪）・ハラペーニョ 農家直送｜田舎野菜',
-  description: '鹿児島県薩摩川内市の農家が育てるにんにく（5kg・10kg、送料込み）、唐辛子（鷹の爪・天日干し）、ハラペーニョ。農薬・除草剤は栽培期間中不使用。',
+  description: '鹿児島県薩摩川内市の農家が育て、竹ざるで天日に干したにんにく（5kg・10kg、送料込み）、唐辛子（鷹の爪・天日干し）、ハラペーニョ。農薬・除草剤は栽培期間中不使用。',
   crumbs: cr('にんにく・唐辛子', '/ninniku-tougarashi/'),
-  schema: () => [...schemaProducts(of('spice'), photos.vegSet)],
-  body: (c) => `${pageHero(c, { eyebrow: 'Garlic &amp; Chili', h1: 'にんにく・唐辛子', lead: 'にんにく、鷹の爪、ハラペーニョ。料理の香りと辛みを、畑から。価格はすべて送料込みです。', crumbs: cr('にんにく・唐辛子', '/ninniku-tougarashi/'), image: 'vegSet' })}
+  schema: () => [...schemaProducts(of('spice'), photos.garlicBulbs)],
+  body: (c) => `${pageHero(c, { eyebrow: 'Garlic &amp; Chili', h1: 'にんにく・唐辛子', lead: '竹ざるで天日に干したにんにく、鷹の爪、ハラペーニョ。料理の香りと辛みを、畑から。価格はすべて送料込みです。', crumbs: cr('にんにく・唐辛子', '/ninniku-tougarashi/'), image: 'garlicTray' })}
 <section class="sec"><div class="wrap">
   <div class="grow-box">${growTags('spice')}</div>
-  <header class="sec__head"><h2>商品と価格</h2></header>
+  ${pickCards(c, of('spice').filter((p) => p.pick))}
+  <header class="sec__head mt"><h2>商品と価格</h2></header>
   ${productTable(of('spice'))}
   ${shipNote(true)}
   <div class="center mt">${contactButtons(c)}</div>
 </div></section>
-<section class="sec sec--tint"><div class="wrap split">
+<section class="sec sec--tint"><div class="wrap">
+  <header class="sec__head"><p class="eyebrow">From the Field</p><h2>畝から、竹ざるへ</h2><p>春に畑で育ったにんにくを掘り上げ、竹ざるに並べて天日で干します。</p></header>
+  <div class="gallery gallery--3">${figure(c, 'garlicField', 'にんにくの畝')}${figure(c, 'garlicBulbs', '掘りたてのにんにく')}${figure(c, 'garlicTray2', '竹ざるで天日に干す')}</div>
+</div></section>
+<section class="sec"><div class="wrap split">
   <div class="split__media">${figure(c, 'garlicWalnut', '畑のにんにくで、バジルペーストを作りました')}</div>
   <div class="split__txt">
     <p class="eyebrow">Recipe</p><h2>畑のにんにくで、バジルペースト</h2>
@@ -149,4 +159,25 @@ const spice = {
 ${ctaBand(c)}`,
 };
 
-export default [satsumaimo, yakiimo, jagaimo, spice];
+// ------------------------------------------------------------ 丹波黒大豆
+const kuromame = {
+  path: '/kuromame/',
+  title: '丹波黒大豆（鹿児島県薩摩川内市産）農家直送｜田舎野菜',
+  description: '品種は丹波黒。鹿児島県薩摩川内市の畑で、農薬・除草剤を栽培期間中使わずに育て、さやごと乾かして収穫した黒大豆です。量と価格はお問い合わせください。',
+  crumbs: cr('丹波黒大豆', '/kuromame/'),
+  body: (c) => `${pageHero(c, { eyebrow: 'Black Soybean', h1: '丹波黒大豆<small>品種：丹波黒／鹿児島県薩摩川内市産</small>', lead: '大粒の黒大豆の代表品種「丹波黒」を、鹿児島の畑で育てました。さやごと乾かしてから、豆を取り出しています。', crumbs: cr('丹波黒大豆', '/kuromame/'), image: 'kuromameSet' })}
+<section class="sec"><div class="wrap">
+  <div class="grow-box">${growTags('mame')}</div>
+  <header class="sec__head"><h2>商品と価格</h2><p>とれる量が少ないため、量と価格はお問い合わせのうえでご案内しています。</p></header>
+  ${productTable(of('mame'))}
+  <div class="center mt">${contactButtons(c)}</div>
+</div></section>
+<section class="sec sec--tint"><div class="wrap">
+  <header class="sec__head"><p class="eyebrow">From the Field</p><h2>さやごと乾かして</h2><p>畑で乾かしたさやから、一粒ずつ豆を取り出します。</p></header>
+  <div class="gallery">${figure(c, 'kuromamePods', '乾いたさや')}${figure(c, 'kuromame', '取り出した丹波黒大豆')}</div>
+  <p class="center">煮豆、黒豆ごはん、炒り豆に。お正月の黒豆にもどうぞ。</p>
+</div></section>
+${ctaBand(c, { title: '丹波黒大豆のお問い合わせ', text: '量と価格、お届けの時期をお知らせします。ご注文フォーム、メール、InstagramのDMからどうぞ。' })}`,
+};
+
+export default [satsumaimo, yakiimo, jagaimo, spice, kuromame];

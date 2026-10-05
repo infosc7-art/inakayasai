@@ -1,5 +1,5 @@
 import { site, faqAll, products } from '../config.mjs';
-import { esc, icon, photo, schemaOrg, schemaFaq, faqBlock, ctaBand, catCards, teamGrid, orderBtn, contactButtons } from '../layout.mjs';
+import { esc, icon, photo, schemaOrg, schemaFaq, faqBlock, ctaBand, catCards, teamGrid, orderBtn, contactButtons, pickCards } from '../layout.mjs';
 import { postCards } from '../blog.mjs';
 
 const steps = [
@@ -20,7 +20,7 @@ export default {
   <div class="wrap hero__in">
     <p class="eyebrow eyebrow--light">Inakayasai, Kagoshima</p>
     <h1 class="hero__h">旅する<br>鹿児島の<br class="sp">田舎野菜</h1>
-    <p class="hero__lead">鹿児島県薩摩川内市、川内川のほとりの小さな畑から。<br class="pc">農薬も除草剤も使わず、真夏に手で草を取って育てた<br class="pc">サツマイモと野菜を、農家から直接お届けします。</p>
+    <p class="hero__lead">忙しい毎日の中で、あなたが健やかに、活力をもって生きるために。<br class="pc">鹿児島の太陽を浴びた、自然まかせの野菜をお届けします。</p>
     <div class="hero__btns"><a class="btn btn--gold btn--lg" href="${c.u('/satsumaimo/')}">サツマイモを見る${icon('arrow')}</a><a class="btn btn--ghost-light" href="${c.u('/order/')}">ご注文の方法</a></div>
   </div>
 </section>
@@ -32,13 +32,37 @@ export default {
   <li>${icon('hand')}<div><b>機械を使わず</b><span>一つずつ手で選んでお届け</span></div></li>
 </ul></div></section>
 
-<section class="sec" id="products"><div class="wrap">
-  <header class="sec__head"><p class="eyebrow">Our Vegetables</p><h2>畑でとれるもの</h2><p>大量生産はしていません。その年にとれた分だけを、順番にご案内します。</p></header>
-  ${catCards(c)}
-  <div class="center mt"><a class="more" href="${c.u('/order/')}">ご注文・送料・お届けの時期${icon('arrow')}</a></div>
+<section class="sec sec--picks" id="products"><div class="wrap">
+  <header class="sec__head"><p class="eyebrow">From the Farm</p><h2>いま、お届けできるもの</h2><p>その年にとれた分だけを、順番にご案内しています。</p></header>
+  ${pickCards(c)}
+  <div class="center mt"><a class="more" href="${c.u('/order/')}">ご注文の流れ・送料・お届けの時期${icon('arrow')}</a></div>
 </div></section>
 
-<section class="sec sec--tint"><div class="wrap split">
+<section class="mosaic" aria-label="畑の写真"><div class="mosaic__grid">
+  <img src="${photo(c, 'garlicTray')}" alt="竹ざるで干すにんにく" loading="lazy">
+  <img src="${photo(c, 'andesRed')}" alt="掘りたてのアンデスレッド" loading="lazy">
+  <img src="${photo(c, 'yakiClose')}" alt="焼き芋の断面" loading="lazy">
+  <img src="${photo(c, 'mayQueen')}" alt="畝に並ぶメークイン" loading="lazy">
+  <img src="${photo(c, 'kuromame')}" alt="丹波黒大豆" loading="lazy">
+</div></section>
+
+<section class="manifesto"><div class="wrap">
+  <header class="manifesto__head"><p class="eyebrow">Manifesto</p><h2>非効率で、地味な野菜。<br>だから、おいしい。</h2></header>
+  <ul class="manifesto__list">
+    <li><b>大量生産の、逆を行く。</b><span>土と水と、野菜の力を信じて、自然にまかせて育てます。</span></li>
+    <li><b>自分が食べたくないものは、まかない。</b><span>除草剤をまくと、なんだか食べたくない。家族にも食べてほしくない。ただ、それだけです。</span></li>
+    <li><b>崖から落とすように、育てる。</b><span>鹿児島の熱い日差しに耐えさせ、草に埋もれさせる。厳しく、そして愛情を込めて。</span></li>
+    <li><b>皮も根も、食べられる。</b><span>虫食いもあります。形もふぞろいです。そのかわり、まるごと安心して食べられる野菜です。</span></li>
+  </ul>
+  <p class="manifesto__sign">ひと芋、入魂。</p>
+</div></section>
+
+<section class="sec sec--tint"><div class="wrap">
+  <header class="sec__head"><p class="eyebrow">Our Vegetables</p><h2>畑でとれるもの</h2><p>大量生産はしていません。サツマイモ、ジャガイモ、にんにく、唐辛子、黒大豆。</p></header>
+  ${catCards(c)}
+</div></section>
+
+<section class="sec"><div class="wrap split">
   <div class="split__media"><img src="${photo(c, 'yakiHand')}" width="791" height="530" alt="手で割った焼き芋。中から蜜があふれている" loading="lazy"></div>
   <div class="split__txt">
     <p class="eyebrow">How to bake</p><h2>甘さは、熟成と焼き方で決まる。</h2>
@@ -48,7 +72,7 @@ export default {
   </div>
 </div></section>
 
-<section class="sec"><div class="wrap">
+<section class="sec sec--tint"><div class="wrap">
   <header class="sec__head"><p class="eyebrow">Our Way</p><h2>一本のサツマイモができるまで</h2><p>効率は悪くても、自分と家族が食べたいと思える育て方をしています。</p></header>
   <ol class="steps">${steps.map(([k, s, h, t]) => `<li class="step"><figure><img src="${photo(c, k)}" alt="${esc(h)}" loading="lazy"><span class="step__season">${s}</span></figure><h3>${esc(h)}</h3><p>${esc(t)}</p></li>`).join('')}</ol>
   <div class="center mt"><a class="btn btn--ghost" href="${c.u('/kodawari/')}">栽培のこだわりを読む${icon('arrow')}</a></div>
@@ -56,7 +80,7 @@ export default {
 
 <section class="sec sec--soil"><div class="wrap">
   <header class="sec__head sec__head--light"><p class="eyebrow eyebrow--light">Our Story</p><h2>祖父母の畑を、もう一度。</h2>
-  <p>猫岳（ねこだけ）の対岸、川内川の目の前にある数百坪の畑。子どものころは嫌でたまらなかった畑仕事を、祖父母と母を見送ったあと、もう一度はじめました。</p></header>
+  <p>先祖代々の土地で、もう一度。猫岳（ねこだけ）の対岸、川内川の目の前の、わずか数百坪の畑から。</p></header>
   ${teamGrid(c)}
   <div class="center mt"><a class="btn btn--gold" href="${c.u('/story/')}">田舎野菜の物語${icon('arrow')}</a></div>
 </div></section>

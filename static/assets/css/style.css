@@ -341,3 +341,58 @@ h3, .h3 { font-size: 1.12rem; font-weight: 700; }
 .past h3 { font-family: var(--f-serif); font-size: 1.3rem; margin-top: 6px; }
 .past h3 small { font-family: var(--f-sans); font-size: .75rem; font-weight: 500; color: var(--ink-2); margin-left: .6em; }
 .past p:last-child { font-size: .93rem; color: var(--ink-2); margin-top: 4px; }
+
+/* ---------- manifesto (top) ---------- */
+.manifesto { padding: clamp(56px, 9vw, 104px) 0; background: var(--paper); }
+.manifesto__head { max-width: 720px; }
+.manifesto__head h2 { font-size: clamp(1.8rem, 5vw, 3rem); line-height: 1.35; margin-top: 6px; }
+.manifesto__list { list-style: none; padding: 0; display: grid; gap: 0; margin-top: 40px; border-top: 2px solid var(--soil); }
+@media (min-width: 860px) { .manifesto__list { grid-template-columns: 1fr 1fr; column-gap: 56px; } }
+.manifesto__list li { padding: 22px 0; border-bottom: 1px solid var(--line); min-width: 0; }
+.manifesto__list b { display: block; font-family: var(--f-serif); font-weight: 800; font-size: clamp(1.25rem, 2.6vw, 1.55rem); color: var(--soil); line-height: 1.5; }
+.manifesto__list span { display: block; color: var(--ink-2); margin-top: 6px; }
+.manifesto__sign { margin-top: 36px; font-family: var(--f-serif); font-weight: 800; font-size: clamp(1.6rem, 4vw, 2.2rem); color: var(--imo); text-align: right; letter-spacing: .12em; }
+.variety__copy { font-family: var(--f-serif); font-weight: 800; color: var(--soil); font-size: 1.05rem; line-height: 1.55; margin-bottom: 6px; }
+
+/* ---------- story chapters ---------- */
+.chapters { padding-block: clamp(48px, 8vw, 88px); display: grid; gap: clamp(44px, 7vw, 72px); }
+.chapter { display: grid; gap: 14px; }
+@media (min-width: 720px) { .chapter { grid-template-columns: 120px 1fr; gap: 32px; } }
+.chapter__no { font-family: var(--f-latin); font-style: italic; font-weight: 600; font-size: 2rem; color: var(--imo); line-height: 1.1; }
+.chapter__no span { display: block; font-family: var(--f-sans); font-style: normal; font-size: .78rem; font-weight: 700; color: var(--ink-2); margin-top: 6px; letter-spacing: .08em; }
+.chapter__body { min-width: 0; }
+.chapter__body h2 { font-size: clamp(1.45rem, 3.6vw, 2rem); margin-bottom: 14px; text-wrap: balance; }
+.chapter__body p + p { margin-top: .9em; }
+.chapter__sign { font-family: var(--f-serif); font-weight: 700; color: var(--soil); font-size: 1.15rem; margin-top: 1.6em !important; }
+
+/* ---------- product picks ---------- */
+.sec--picks { padding-top: clamp(48px, 7vw, 80px); }
+.picks { list-style: none; padding: 0; display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.pick { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); border-radius: var(--r-l); overflow: hidden; min-width: 0; }
+.pick__media { position: relative; display: block; aspect-ratio: 4 / 3; overflow: hidden; background: var(--cream); }
+.pick__media img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.pick__media:hover img { transform: scale(1.04); }
+.pick__media .status { position: absolute; left: 12px; top: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.15); }
+.pick__body { padding: 16px 18px 20px; display: flex; flex-direction: column; flex: 1; }
+.pick__cat { font-size: .78rem; color: var(--leaf); font-weight: 700; }
+.pick h3 { font-family: var(--f-serif); font-size: 1.35rem; margin-top: 2px; }
+.pick__copy { font-size: .9rem; color: var(--ink-2); margin-top: 4px; line-height: 1.7; }
+.pick__price { margin-top: auto; padding-top: 12px; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.pick__price b { font-size: 1.6rem; color: var(--soil); font-variant-numeric: tabular-nums; }
+.pick__price b small { font-size: .9rem; margin-left: 2px; }
+.pick__price span { font-size: .82rem; color: var(--ink-2); }
+.pick__btns { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
+.pick__btns .btn { padding: .65em 1.3em; }
+
+/* ---------- photo mosaic ---------- */
+.mosaic { background: var(--soil); }
+.mosaic__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px; }
+.mosaic__grid img { width: 100%; height: 100%; aspect-ratio: 1; object-fit: cover; }
+.mosaic__grid img:first-child { grid-column: span 2; aspect-ratio: 2 / 1; }
+@media (min-width: 800px) { .mosaic__grid { grid-template-columns: repeat(5, 1fr); } .mosaic__grid img:first-child { grid-column: auto; aspect-ratio: 1; } .mosaic__grid img { aspect-ratio: 3 / 4; } }
+
+.variety--text .variety__item { padding-top: 18px; }
+.variety--text h3 { margin-top: 0; }
+.cat__media img { object-position: center 60%; }
+.page-hero h1 small { font-family: var(--f-sans); }
+@media (max-width: 559px) { .pick__media { aspect-ratio: 16 / 10; } }

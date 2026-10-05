@@ -112,7 +112,7 @@ export function faqBlock(list, open = 0) {
 const STATUS = { open: ['受付中', 'open'], season: ['次の収穫期にご案内', 'season'], few: ['少量のみ', 'few'] };
 const yen = (n) => Number(n).toLocaleString('ja-JP');
 export function growTags(g) {
-  return `<ul class="grow-tags">${growing[g].labels.map((l) => `<li>${icon('leaf')}${esc(l)}</li>`).join('')}</ul><p class="grow-fert">肥料：${esc(growing[g].fert)}</p>`;
+  return `<ul class="grow-tags">${growing[g].labels.map((l) => `<li>${icon('leaf')}${esc(l)}</li>`).join('')}</ul>${growing[g].fert ? `<p class="grow-fert">肥料：${esc(growing[g].fert)}</p>` : ''}`;
 }
 export function productTable(list) {
   return `<div class="ptable-wrap"><table class="ptable"><thead><tr><th scope="col">品目</th><th scope="col">内容量</th><th scope="col">価格</th><th scope="col">状況</th></tr></thead><tbody>${list.map((p) => {
@@ -124,10 +124,23 @@ export function productTable(list) {
 export function catCards(c) {
   return `<ul class="cat-grid">${categories.map((k) => {
     const open = products.filter((p) => p.cat === k.slug && p.status === 'open').length;
-    const media = k.img.startsWith('icon:') ? pic(k.img.slice(5)) : `<img src="${photo(c, k.img)}" width="790" height="529" alt="${esc(k.name)}" loading="lazy">`;
+    const media = k.img.startsWith('icon:') ? pic(k.img.slice(5)) : `<img src="${photo(c, k.img)}" alt="${esc(k.name)}" loading="lazy">`;
     return `<li class="cat"><a href="${c.u(k.path)}"><div class="cat__media">${media}</div><div class="cat__body">
     <p class="cat__en">${esc(k.en)}</p><h3>${esc(k.name)}</h3><p>${esc(k.lead)}</p>
     <p class="cat__foot"><span class="status status--${open ? 'open' : 'season'}">${open ? '受付中の商品あり' : '次の収穫期にご案内'}</span><span class="more">くわしく${icon('arrow')}</span></p></div></a></li>`;
+  }).join('')}</ul>`;
+}
+
+// 購入につながる「おすすめ」カード（写真・価格・状況・注文ボタン）
+export function pickCards(c, list = products.filter((p) => p.pick)) {
+  return `<ul class="picks">${list.map((p) => {
+    const [st, cls] = STATUS[p.status];
+    const cat = categories.find((k) => k.slug === p.cat);
+    const price = p.price ? `<b>${yen(p.price)}<small>円</small></b><span>${esc(p.weight)}・${p.ship === 'komi' ? '送料込み' : '送料別'}</span>` : '<span>価格はお問い合わせください</span>';
+    return `<li class="pick"><a class="pick__media" href="${c.u(cat.path)}"><img src="${photo(c, p.img)}" alt="${esc(p.name)}" loading="lazy"><span class="status status--${cls}">${st}</span></a>
+    <div class="pick__body"><p class="pick__cat">${esc(cat.name)}</p><h3>${esc(p.name)}</h3><p class="pick__copy">${esc(p.copy || p.note)}</p>
+    <p class="pick__price">${price}</p>
+    <div class="pick__btns"><a class="btn btn--imo" href="${orderHref(c)}"${ext(orderHref(c))}>${p.status === 'open' ? '注文する' : '予約・問い合わせ'}</a><a class="more" href="${c.u(cat.path)}">くわしく${icon('arrow')}</a></div></div></li>`;
   }).join('')}</ul>`;
 }
 
@@ -205,7 +218,7 @@ ${body}
 </main>
 ${footer(c)}
 <nav class="dock" aria-label="ご注文">
-  <a href="${c.u('/satsumaimo/')}">${icon('basket')}<span>商品</span></a>
+  <a href="${c.u('/#products')}">${icon('basket')}<span>商品</span></a>
   ${site.instagram ? `<a href="${site.instagram}" target="_blank" rel="noopener">${icon('insta')}<span>Instagram</span></a>` : ''}
   <a class="dock__main" href="${orderHref(c)}"${ext(orderHref(c))}>${icon('form')}<span>ご注文・お問い合わせ</span></a>
 </nav>
